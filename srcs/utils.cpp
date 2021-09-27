@@ -1,11 +1,11 @@
 #include "Cell.hpp"
 #include "GameOfLife.hpp"
 
-template <class T>
-void print_vector(std::vector<T> &v)
+//template <class T>
+void print_vector(std::vector<std::string> &v)
 {
-	typename std::vector<T>::iterator begin = v.begin();
-	typename std::vector<T>::iterator end = v.end();
+	std::vector<std::string>::iterator begin = v.begin();
+	std::vector<std::string>::iterator end = v.end();
 	for (; begin != end - 1; begin++)
 		std::cout << "\033[38;5;46m" << *begin << "\033[0m " <<std::endl;
 }
