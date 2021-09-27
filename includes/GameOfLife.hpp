@@ -13,6 +13,7 @@
 void print_map(std::vector<std::string> &v);
 
 int error(int Case);
+int check_neighbors(int i, int j, std::vector<std::string> &map);
 
 #endif
 

@@ -13,9 +13,12 @@ int main(int ac, char **av)
 	std::cout << gen.getSurvivors() << std::endl;
 	while (gen.getState() != death)
 	{
+		std::system("clear");
 		gen.print_status_game();
 		gen.iteration();
-		//sleep(1);
+		if (gen.getSurvivors() == 0)
+			break;
+		usleep(200000);
 	}
 	gen.theEnd();
 	return 0;

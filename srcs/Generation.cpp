@@ -5,8 +5,8 @@ Generation::Generation(): survivors(0), iterations(1), state(live) {};
 
 void Generation::getMapFromFile(char* av1)
 {
-	int max_size = 0;
 	std::string path;
+	int number_of_strs = 0;
 
 	if (av1 != 0)
 		path = av1;
@@ -15,18 +15,23 @@ void Generation::getMapFromFile(char* av1)
 	std::ifstream file(path);
 	if (!file)
 		error(2);
-	while (file)
+	while (file && number_of_strs < MAX_HIGHT - 1)
 	{
 		std::string tmp;
 		getline(file, tmp);
-		if (tmp.size() > max_size)
-			max_size = tmp.size();
+		if (tmp.size() > MAX_WIDTH)
+			tmp.erase(tmp.begin() + MAX_WIDTH - 1, tmp.end());
+		if (tmp.size() < MAX_WIDTH)
+			tmp.insert(tmp.end(), MAX_WIDTH - tmp.size() - 1, ' ');
 		this->map.push_back(tmp);
+		number_of_strs++;
 	}
-	for (std::vector<std::string>::iterator it = this->map.begin(); it != this->map.end(); it++)
+	std::string empty;
+	empty.insert(empty.begin(), MAX_WIDTH - 1, ' ');
+	while (number_of_strs < MAX_HIGHT - 1)
 	{
-		while (it->size() < max_size)
-			*it += ' ';
+		this->map.push_back(empty);
+		number_of_strs++;
 	}
 }
 
@@ -44,7 +49,6 @@ void Generation::fillParametrs()
 
 void Generation::print_status_game()
 {
-	std::system("clear");
 	std::cout << "\t\t\t\t\t\t\t" << "\033[38;5;118mGame of Life" << WHITE << std::endl \
 	<< "Is a live: " << "\033[38;5;93m" << this->survivors << WHITE << "\t\t\t\t" \
 	<< "Iteration number: " << "\033[38;5;93m" << this->iterations << WHITE << std::endl;
@@ -68,12 +72,37 @@ void Generation::theEnd()
 
 void Generation::iteration()
 {
+	int i = 0;
+	int j = 0;
+	int neighbors = 0;
+	std::vector<std::string> copy_vector(this->map);
 	if (this->survivors == 0)
 		this->state = death;
+	this->survivors = 0;
 	this->iterations++;
-	if (this->iterations == 100)
-		this->state = death;
-	sleep(1);
+	for (std::vector<std::string>::iterator it_vec = this->map.begin(); it_vec != this->map.end(); it_vec++, i++)
+	{
+		for (std::string::iterator it_str = it_vec->begin(); it_str != it_vec->end() - 1; it_str++, j++)
+		{
+			neighbors = check_neighbors(i, j, this->map);
+			//printf("i = %d; j = %d sosedi = %d\n", i, j, neighbors);
+			if (this->map[i][j] == ' ' && neighbors == 3)
+			{
+				copy_vector[i][j] = '#';
+				this->survivors++;
+			}
+			else if (this->map[i][j] != ' ' && (neighbors == 3 || neighbors == 2))
+			{
+				copy_vector[i][j] = '#';
+				this->survivors++;
+			}
+			else if (this->map[i][j] != ' ' && (neighbors > 3 || neighbors < 2))
+				copy_vector[i][j] = ' ';
+		}
+		j = 0;
+	}
+	print_map(copy_vector);
+	this->map = copy_vector;
 }
 
 
