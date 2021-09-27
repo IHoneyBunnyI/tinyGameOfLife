@@ -64,7 +64,7 @@ void Generation::fillParametrs()
 
 void Generation::print_status_game()
 {
-	std::cout << "\t\t\t\t\t\t\t" << "\033[38;5;118mGame of Life" << WHITE << std::endl \
+	std::cout << "\t\t\t\t\t\t\t\t\t\t" << "\033[38;5;118mGame of Life" << WHITE << std::endl \
 	<< "Is a live: " << "\033[38;5;93m" << this->survivors << WHITE << "\t\t\t\t" \
 	<< "Iteration number: " << "\033[38;5;93m" << this->iterations << WHITE << std::endl;
 }
