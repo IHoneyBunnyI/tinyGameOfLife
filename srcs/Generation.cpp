@@ -85,19 +85,7 @@ void Generation::iteration()
 		for (std::string::iterator it_str = it_vec->begin(); it_str != it_vec->end() - 1; it_str++, j++)
 		{
 			neighbors = check_neighbors(i, j, this->map);
-			//printf("i = %d; j = %d sosedi = %d\n", i, j, neighbors);
-			if (this->map[i][j] == ' ' && neighbors == 3)
-			{
-				copy_vector[i][j] = '#';
-				this->survivors++;
-			}
-			else if (this->map[i][j] != ' ' && (neighbors == 3 || neighbors == 2))
-			{
-				copy_vector[i][j] = '#';
-				this->survivors++;
-			}
-			else if (this->map[i][j] != ' ' && (neighbors > 3 || neighbors < 2))
-				copy_vector[i][j] = ' ';
+			this->common_rules(copy_vector, neighbors, i, j);
 		}
 		j = 0;
 	}

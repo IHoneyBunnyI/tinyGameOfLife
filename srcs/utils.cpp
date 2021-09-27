@@ -31,9 +31,6 @@ int check_generations(int *g)
 
 int check_neighbors(int i, int j, std::vector<std::string> &map)
 {
-	//std::cout << "vec size=" << map.size() << std::endl;
-	//std::cout << "str size=" << map[79].size() << std::endl;
-	//std::cout << "i ="<<i << " j=" << j << std::endl;
 	int neighbors = 0;
 	if (i != 0 && map[i -1][j] != ' ') //проверка слева
 		neighbors++;

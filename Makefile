@@ -7,6 +7,7 @@ CXXFLAGS = -g -Iincludes/ -fsanitize=address
 FILES_CPP = main.cpp\
 			Generation.cpp\
 			utils.cpp\
+			common_rules.cpp\
 
 FILES_HPP = Generation.hpp\
 			GameOfLife.hpp\

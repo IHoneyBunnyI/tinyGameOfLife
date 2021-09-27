@@ -16,6 +16,7 @@ class Generation
 		void fillParametrs();
 		void print_status_game();
 		void theEnd();
+		void common_rules(std::vector<std::string> &copy_vector, int neighbors, int i, int j);
 
 	private:
 		std::vector<std::string> map;
