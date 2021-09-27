@@ -7,7 +7,6 @@ int main(int ac, char **av)
 	Generation gen;
 	int generations[20];
 	int index = 0;
-
 	if (ac < 1 || ac > 2)
 		return (error(1));
 	gen.getMapFromFile(av[1]);

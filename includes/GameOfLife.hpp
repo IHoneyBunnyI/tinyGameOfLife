@@ -1,7 +1,10 @@
 #ifndef GAMEOFLIFE_HPP
 #define GAMEOFLIFE_HPP
-#define MAX_WIDTH 364
-#define MAX_HIGHT 82
+//#define MAX_WIDTH 364
+//#define MAX_HIGHT 82
+
+#define MAX_WIDTH 178
+#define MAX_HIGHT 47
 
 #define WHITE "\033[0m"
 

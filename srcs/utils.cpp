@@ -16,6 +16,10 @@ int error(int Case)
 		std::cout << "\e[38;5;147m" << "Sorry, but I need a first generation file :(" << WHITE << std::endl;
 	if (Case == 2)
 		std::cout << "\e[38;5;147m" << "Sorry, but I don't need an empty file" << WHITE << std::endl;
+	if (Case == 3)
+		std::cout << "\e[38;5;147m" << "Sorry, but I need file name" << WHITE << std::endl;
+	if (Case == 4)
+		std::cout << "\e[38;5;147m" << "Can't create file" << WHITE << std::endl;
 	exit(Case);
 }
 
