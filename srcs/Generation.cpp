@@ -24,7 +24,7 @@ void Generation::getMapFromFile(char* av1)
 	if (av1 != 0)
 		path = av1;
 	else
-		path = "maps/map";
+		path = "./map";
 	std::ifstream file(path);
 	if (!file)
 		error(2);
