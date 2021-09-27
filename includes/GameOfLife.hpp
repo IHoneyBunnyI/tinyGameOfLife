@@ -11,9 +11,9 @@
 #include <unistd.h>
 
 void print_map(std::vector<std::string> &v);
-
 int error(int Case);
 int check_neighbors(int i, int j, std::vector<std::string> &map);
+int check_generations(int generation[]);
 
 #endif
 

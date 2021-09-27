@@ -18,6 +18,23 @@ int error(int Case)
 	exit(Case);
 }
 
+int check_generations(int *g)
+{
+	int i = 0;
+	if (g[0] == g[1]
+		&& g[0] == g[2]
+		&& g[0] == g[3]
+		&& g[0] == g[4]
+		&& g[0] == g[5]
+		&& g[0] == g[6]
+		&& g[0] == g[7]
+		&& g[0] == g[8]
+		&& g[0] == g[9])
+		return 0;
+	else
+		return 1;
+}
+
 int check_neighbors(int i, int j, std::vector<std::string> &map)
 {
 	//std::cout << "vec size=" << map.size() << std::endl;
