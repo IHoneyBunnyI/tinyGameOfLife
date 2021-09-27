@@ -71,8 +71,10 @@ void Generation::print_status_game()
 void Generation::theEnd()
 {
 	std::system("clear");
-	std::string mnogoTabov ="\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t";
-	for (int i = 0; i < 37; i++)
+	std::string mnogoTabov;
+	for (int i = 0; i < MAX_WIDTH / 30; i++)
+		mnogoTabov += '\t';
+	for (int i = 0; i < (MAX_HIGHT - 10) / 2; i++)
 		std::cout << std::endl;
 	std::cout << mnogoTabov << "\033[38;5;220m" << "  _______      ___      .___  ___.  _______      ______   ____    ____  _______ .______      " << WHITE << std::endl;
  	std::cout << mnogoTabov << "\033[38;5;220m" << " /  _____|    /   \\     |   \\/   | |   ____|    /  __  \\  \\   \\  /   / |   ____||   _  \\     " << WHITE << std::endl;
@@ -81,8 +83,9 @@ void Generation::theEnd()
 	std::cout << mnogoTabov << "\033[38;5;220m" << "|  |__| |  /  _____  \\  |  |  |  | |  |____    |  `--'  |    \\    /    |  |____ |  |\\  \\----." << WHITE << std::endl;
 	std::cout << mnogoTabov << "\033[38;5;220m" << " \\______| /__/     \\__\\ |__|  |__| |_______|    \\______/      \\__/     |_______|| _| `._____|" << WHITE << std::endl;
 	std::cout << mnogoTabov + "\t\t\t\t\t" << "\033[38;5;124m" << "All cells died :(" << WHITE << std::endl;
-	for (int i = 0; i < 39; i++)
+	for (int i = 0; i < (MAX_HIGHT - 10) / 2; i++)
 		std::cout << std::endl;
+	//ну тут полный треш. но хоть как-то
 }
 
 void Generation::iteration()

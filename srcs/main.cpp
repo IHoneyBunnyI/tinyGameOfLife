@@ -24,7 +24,7 @@ int main(int ac, char **av)
 			break;
 		if (gen.getSurvivors() == 0)
 			break;
-		usleep(200000);
+		usleep(180000);
 	}
 	gen.theEnd();
 	return 0;
