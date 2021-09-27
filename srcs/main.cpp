@@ -5,7 +5,7 @@
 int main(int ac, char **av)
 {
 	Generation gen;
-	int generations[10];
+	int generations[20];
 	int index = 0;
 
 	if (ac < 1 || ac > 2)
@@ -19,7 +19,7 @@ int main(int ac, char **av)
 		gen.print_status_game();
 		gen.iteration();
 		generations[index++] = gen.getSurvivors();
-		if (index == 10)
+		if (index == 20)
 			index = 0;
 		if (check_generations(generations) == 0)
 			break;
