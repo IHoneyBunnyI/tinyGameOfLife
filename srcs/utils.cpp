@@ -1,12 +1,13 @@
 #include "Generation.hpp"
 #include "GameOfLife.hpp"
+#include <cstdlib>
 
 void print_map(std::vector<std::string> &v)
 {
 	std::vector<std::string>::iterator begin = v.begin();
 	std::vector<std::string>::iterator end = v.end();
 	for (; begin != end - 1; begin++)
-		std::cout << *begin << std::endl;
+		std::cout << "\033[38;5;46m" << *begin << WHITE << std::endl;
 }
 
 int error(int Case)
