@@ -1,12 +1,25 @@
 #include "Generation.hpp"
 #include "GameOfLife.hpp"
 
-Generation::Generation(): survivors(0), iterations(1), state(live) {};
+Generation::Generation(): survivors(0), iterations(1), state(live), symbol('#') {};
+int find_symbol(std::string string, char &symbol)
+{
+	for (int i = 0; i < string.size(); i++)
+	{
+		if (string[i] != ' ')
+		{
+			symbol = string[i];
+			return 1;
+		}
+	}
+	return 0;
+}
 
 void Generation::getMapFromFile(char* av1)
 {
 	std::string path;
 	int number_of_strs = 0;
+	int find = 0;
 
 	if (av1 != 0)
 		path = av1;
@@ -19,6 +32,8 @@ void Generation::getMapFromFile(char* av1)
 	{
 		std::string tmp;
 		getline(file, tmp);
+		if (!find)
+			find = find_symbol(tmp, this->symbol);
 		if (tmp.size() > MAX_WIDTH)
 			tmp.erase(tmp.begin() + MAX_WIDTH - 1, tmp.end());
 		if (tmp.size() < MAX_WIDTH)
@@ -92,8 +107,6 @@ void Generation::iteration()
 	print_map(copy_vector);
 	this->map = copy_vector;
 }
-
-
 
 std::vector<std::string>& Generation::getMap()
 {

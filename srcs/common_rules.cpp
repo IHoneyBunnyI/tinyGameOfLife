@@ -5,12 +5,12 @@ void Generation::common_rules(std::vector<std::string> &copy_vector, int neighbo
 {
 	if (this->map[i][j] == ' ' && neighbors == 3)
 	{
-		copy_vector[i][j] = '#';
+		copy_vector[i][j] = this->symbol;
 		this->survivors++;
 	}
 	else if (this->map[i][j] != ' ' && (neighbors == 3 || neighbors == 2))
 	{
-		copy_vector[i][j] = '#';
+		copy_vector[i][j] = this->symbol;
 		this->survivors++;
 	}
 	else if (this->map[i][j] != ' ' && (neighbors > 3 || neighbors < 2))

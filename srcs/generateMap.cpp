@@ -19,8 +19,9 @@ int main(int ac, char** av)
 	}
 	else if (ac == 4)
 	{
+		std::cout << av[3][0];
 		std::string file_name(av[1]);
-		MapGenerator generator(file_name, std::atoi(av[2]), av[2][0]);
+		MapGenerator generator(file_name, std::atoi(av[2]), av[3][0]);
 		generator.generateMap();
 	}
 }

@@ -17,12 +17,14 @@ class Generation
 		void print_status_game();
 		void theEnd();
 		void common_rules(std::vector<std::string> &copy_vector, int neighbors, int i, int j);
+		friend int find_symbol(std::string string);
 
 	private:
 		std::vector<std::string> map;
 		int survivors;
 		int iterations;
 		int state;
+		char symbol;
 
 	public:
 		std::vector<std::string>& getMap();
