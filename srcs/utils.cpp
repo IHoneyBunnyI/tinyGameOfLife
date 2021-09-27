@@ -1,8 +1,7 @@
-#include "Cell.hpp"
+#include "Generation.hpp"
 #include "GameOfLife.hpp"
 
-//template <class T>
-void print_vector(std::vector<std::string> &v)
+void print_map(std::vector<std::string> &v)
 {
 	std::vector<std::string>::iterator begin = v.begin();
 	std::vector<std::string>::iterator end = v.end();

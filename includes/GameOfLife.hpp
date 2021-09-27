@@ -7,8 +7,7 @@
 #include <fstream>
 #include <vector>
 
-//template <class T>
-void print_vector(std::vector<std::string> &v);
+void print_map(std::vector<std::string> &v);
 
 int error(int Case);
 

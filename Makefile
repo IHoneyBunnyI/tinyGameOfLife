@@ -5,10 +5,10 @@ CXX = clang++
 CXXFLAGS = -g -Iincludes/ -fsanitize=address
 
 FILES_CPP = main.cpp\
-			Cell.cpp\
+			Generation.cpp\
 			utils.cpp\
 
-FILES_HPP = Cell.hpp\
+FILES_HPP = Generation.hpp\
 			GameOfLife.hpp\
 
 SRCS = $(addprefix srcs/, $(FILES_CPP))
