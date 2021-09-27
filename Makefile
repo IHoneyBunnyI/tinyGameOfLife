@@ -1,8 +1,8 @@
-NAME = gameOfLife
+NAME = game
 
 CXX = clang++
 
-CXXFLAGS = -g -fsanitize=address -Iincludes/
+CXXFLAGS = -g -Iincludes/ -fsanitize=address
 
 FILES_CPP = main.cpp\
 			Cell.cpp\
