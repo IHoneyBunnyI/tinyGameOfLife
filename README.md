@@ -1,4 +1,6 @@
 # tinyGameOfLife
+![image](./GameOfLife.gif)
+
 Implementation of a finite cellular automaton on the example of the [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 ## Usage
