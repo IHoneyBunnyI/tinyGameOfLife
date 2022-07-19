@@ -4,7 +4,7 @@
 //#define MAX_HIGHT 82
 
 #define MAX_WIDTH 178
-#define MAX_HIGHT 47
+#define MAX_HIGHT 44
 
 #define WHITE "\033[0m"
 
