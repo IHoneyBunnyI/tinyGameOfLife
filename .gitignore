@@ -1,6 +1,5 @@
 compile_flags.txt
 gameOfLife
-*game*
 *.o
 *mapGenerate
 a
